@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .topo{
+    width: auto;
+    height: 69px;
+    background-color: #EC362D;
+    color:#FFFFFF;
+    font-size: 37px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conteudo{
+    width: auto;
+    height: 100%;
+    background-color: #FAFAFA;
+    box-shadow: 0 2px 4px 0  inset rgba(0, 0, 0, 0.40);
+    padding-top: 70px;
+  }
+
+  .containerVazio{
+    max-width: 1051px;
+    height: 181px;
+    background-color: #FAFAFA;
+    border: 1px dashed #D4D4D4;
+    box-shadow: 0 0 1px #D4D4D4 inset;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .containerVazio > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .semQuizz{
+    width: 250px;
+    height: 85px;
+    color: #B9B9B9;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .criarQuizz{
+    width: 151px;
+    height: 40px;
+    color: #EC362D;
+    font-size: 21px;
+    font-weight: 400;
+    border: 1px dashed #EC362D;
+    box-shadow: 0 0 1px #EC362D inset;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
