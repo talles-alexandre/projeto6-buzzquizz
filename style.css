@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap");
+body {
+  background-color: #fafafa;
+  width: 1440px;
+}
+header {
+  width: 1440px;
+  height: 69px;
+  background-color: #ec362d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+header p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 37px;
+  color: #fff;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 146px;
+}
+.make-quizz {
+  width: 1051px;
+  height: 181px;
+  background-color: #fafafa;
+  border: 1px dashed #d5d5d5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.make-quizz p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #b9b9b9;
+  text-align: center;
+}
+.make-quizz button {
+  width: 136px;
+  height: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  background-color: #fafafa;
+  color: #ec362d;
+  border: 1px dashed #ec362d;
+  border-radius: 50px;
+}
+.make-quizz button:hover {
+  cursor: pointer;
+}
+.all-quizzes {
+  margin-top: 50px;
+  width: 1051px;
+}
+.all-quizzes p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  margin-bottom: 12px;
+}
