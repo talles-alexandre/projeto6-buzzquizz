@@ -86,3 +86,6 @@ section {
   text-align: left;
   margin-bottom: 12px;
 }
+.escondido {
+  display: none;
+}
