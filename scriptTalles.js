@@ -11,9 +11,9 @@ function criarQuizz() {
   const containerVazio = document.querySelector(".containerVazio");
   const todosQuizzes = document.querySelector(".todosQuizzes");
   const crearTela0 = document.querySelector(".crearQuizz0");
-  containerVazio.classList.add("escondido");
-  todosQuizzes.classList.add("escondido");
-  crearTela0.classList.remove("escondido");
+  containerVazio.classList.add("hidden");
+  todosQuizzes.classList.add("hidden");
+  crearTela0.classList.remove("hidden");
 }
 
 function criarPerguntas() {
@@ -52,9 +52,9 @@ function validarInformacoesBasica() {
 
 function renderizarPerguntas() {
   const crearTela0 = document.querySelector(".crearQuizz0");
-  crearTela0.classList.add("escondido");
+  crearTela0.classList.add("hidden");
   const perguntas = document.querySelector(".perguntas");
-  perguntas.classList.remove("escondido");
+  perguntas.classList.remove("hidden");
 
   const caixaperguntas = document.querySelector(".caixa-perguntas");
 
