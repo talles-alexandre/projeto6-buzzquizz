@@ -4,10 +4,18 @@
 
   body{
     font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+  }
+
+  ion-icon{
+    color: white;
+    background-color: #EC362D;
+    font-size: 22px;
+    border-radius: 50%;
   }
 
   .topo{
-    width: auto;
+    width: 100%;
     height: 69px;
     background-color: #EC362D;
     color:#FFFFFF;
@@ -16,14 +24,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    cursor: context-menu;
   }
 
-  .conteudo{
+  .conteudo-tela1{
     width: auto;
     height: 100%;
+    min-height: 955px;
     background-color: #FAFAFA;
     box-shadow: 0 2px 4px 0  inset rgba(0, 0, 0, 0.40);
     padding-top: 70px;
+    margin-top: 69px;
   }
 
   .containerVazio{
@@ -37,6 +52,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-bottom: 77px;
   }
 
   .containerVazio > div{
@@ -47,19 +63,21 @@
   }
 
   .semQuizz{
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     height: 85px;
     color: #B9B9B9;
     font-size: 20px;
     font-weight: 400;
-    text-align: center;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
+    cursor: context-menu;
   }
   .criarQuizz{
-    width: 151px;
+    max-width: 151px;
+    width: 100%;
     height: 40px;
     color: #EC362D;
     font-size: 21px;
@@ -67,14 +85,294 @@
     border: 1px dashed #EC362D;
     box-shadow: 0 0 1px #EC362D inset;
     border-radius: 50px;
-    text-align: center;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
+  .todosQuizzes{
+    max-width: 1051px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    margin-inline: auto;
+    padding-bottom: 100px;
+  }
 
-  /* ------------------------------------------------------------------------------------------ */
-  /* Talles, aqui embaixo vc pode criar o css da tela 3, também pra não ficar confuso depois */
-  /* ------------------------------------------------------------------------------------------ */
+  .titulo{
+    max-width: 158px;
+    width: 100%;
+    height: 23px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: context-menu;
+  }
+
+  .fileiraQuizz{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+  }
+
+  .caixaDoQuizz{
+    max-width: 340px;
+    width: 100%;
+    height: 181px;
+    border-radius: 5px;
+    position: relative;
+    background-image:  linear-gradient(180deg, transparent, rgb(48, 46, 46), rgb(5, 0, 0));
+    cursor: pointer;
+  }
+
+  .caixaDoQuizz img{
+    width:100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left:0;
+    opacity: 0.9;
+  }
+
+  .texto-da-imagem{
+    max-width: 301px;
+    height: 54px;
+    font-size: 19px;
+    font-weight: 400;
+    color: #FFFFFF;
+    position:absolute;
+    bottom: 0;
+    left: 15px;
+  }
+
+  .quizzesUsuario{
+    max-width: 1051px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+
+  /** Aqui começa a tela 2 **/
+
+  .conteudo-tela2{
+    width: 100%;
+    height: 100%;
+    margin-top: 53px;
+  }
+
+  .banner{
+    width: 100%;
+    height: 227px;
+    position: relative;
+    background-color: black;
+    opacity: 0.9;
+  }
+
+  
+  .banner img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+   
+  }
+
+  .banner > div {
+    height: 54px;
+    font-size: 39px;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+  }
+
+  .quizzContainer{
+    max-width: 759px;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 27px 36px 35px 36px;
+    margin: 42px auto;
+  }
+
+  .quizzPergunta{
+    max-width: 687px;
+    height: 137px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+ .quizzPergunta > div{
+    max-width: 623px;
+    max-height: 83px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #FFFFFF;
+ }
+
+ .quizzOpcoes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+ }
+
+.opcao > img{
+  max-width: 330px;
+  width: 100%;
+}
+
+
+.opcao{
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.parabensContainer{
+  max-width: 759px;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 27px 36px 35px 36px;
+  margin: 42px auto;
+
+}
+
+.parabensMensagem{
+  max-width: 687px;
+  height: 137px;
+  width: 100%;
+  background-color: #EC362D;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.parabensImagem > img{
+  max-width: 364px;
+}
+
+.parabensTexto{
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #484848;
+}
+
+.ladoParabens{
+  display: flex;
+  justify-content: space-around;
+  gap:10px;
+}
+
+.reiniciarQuizz{
+  max-width: 260px;
+  width: 100%;
+  height: 52px;
+  background-color: #EC362D;
+  border-radius: 15px;
+  color:#FFF5F4;
+  font-size: 21px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voltarHome{
+  max-width: 219px;
+  width: 100%;
+  height: 44px;
+  color:#818181;
+  font-size: 21px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:15px;
+  margin-bottom: 50px;
+} 
+
+.hidden{
+  display: none;
+}
+
+
+  
+/**  Responsiviness **/
+
+@media(max-width: 1100px){
+  
+  .fileiraQuizz{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .todosQuizzes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } 
+
+  .quizzesUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .titulo{
+   max-width: 340px;
+   justify-content: space-between;
+   padding: 0 10px 15px 5px;
+    
+  }
+
+  .containerVazio{
+    max-width: 340px;
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  /** Tela 2   **/
+
+ 
+
+}
