@@ -92,10 +92,10 @@
       <div class="crearTela0">
         <input type="text" class="tituloDoQuizz" placeholder="Título do seu quizz">
         <input type="text" class="imagemDoQuizz" placeholder="URL da imagem do seu quizz">
-        <input type="text" class="qtdPerguntas" placeholder="Quantidade de perguntas do quizz">
-        <input type="text" class="qtdNiveis" placeholder="Quantidade de níveis do quizz">
+        <input type="number" class="qtdPerguntas" placeholder="Quantidade de perguntas do quizz">
+        <input type="number" class="qtdNiveis" placeholder="Quantidade de níveis do quizz">
       </div>
-      <button onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+      <button class="prosseguir" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
 
     </div>
 
@@ -104,11 +104,13 @@
       <div class="titulo">Crie suas perguntas</div>
       <div class="caixa-perguntas">
       </div>
+      <button class="prosseguir" onclick="renderizarNiveis()">Prosseguir para criar níveis</button>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-    <script src="scriptTalles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+  <script src="scriptTalles.js"></script>
 </body>
 
 </html>

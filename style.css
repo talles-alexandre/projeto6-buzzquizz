@@ -114,21 +114,6 @@ body {
   font-size: 19px;
   color: #bababa;
 }
-
-.crearQuizz0 button {
-  width: 368.86px;
-  height: 54px;
-  background: #ec362d;
-  border-radius: 15px;
-  border: none;
-  color: #fff5f4;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 21px;
-  margin-top: 85px;
-  margin-bottom: 30px;
-}
 .perguntas {
   display: flex;
   flex-direction: column;
@@ -141,8 +126,6 @@ body {
   font-size: 23px;
 }
 .caixa-perguntas {
-  background: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   margin-top: 36px;
   width: 600px;
   margin-bottom: 20px;
@@ -151,6 +134,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.pergunta {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
 }
 .pergunta input {
   width: 564px;
@@ -185,6 +173,20 @@ body {
 }
 .pergunta input:last-child {
   margin-bottom: 27px;
+}
+.prosseguir {
+  width: 369px;
+  height: 54px;
+  background: #ec362d;
+  border-radius: 15px;
+  border: none;
+  color: #fff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 .escondido {
   display: none;
