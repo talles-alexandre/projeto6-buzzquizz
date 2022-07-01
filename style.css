@@ -1,6 +1,6 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
   body{
     font-family: 'Roboto', sans-serif;
@@ -55,12 +55,12 @@
     margin-bottom: 77px;
   }
 
-  .containerVazio > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.containerVazio > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
   .semQuizz{
     max-width: 250px;
@@ -327,10 +327,139 @@
   margin-bottom: 50px;
 } 
 
+/* --------------- Aquiiii abaixo fica o CSS que vc fez, Talles.. o hidden continua no final -----------*/
+
+
+.crearQuizz0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.crearQuizz0 p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.crearTela0 {
+  margin-top: 27px;
+  width: 600px;
+  height: 256px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+.crearTela0 input {
+  width: 564px;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding: 23px;
+}
+
+.crearTela0 input::placeholder {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19px;
+  color: #bababa;
+}
+
+.perguntas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perguntas .titulo {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.caixa-perguntas {
+  margin-top: 36px;
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.caixa-perguntas .pergunta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pergunta {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
+}
+
+.pergunta input {
+  width: 564px;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.pergunta p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-left: 17px;
+  margin-top: 20px;
+}
+
+.pergunta input::placeholder {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19px;
+  color: #bababa;
+  margin-left: 20px;
+  padding: 0 15px;
+}
+
+.pergunta input:last-child {
+  margin-bottom: 27px;
+}
+
+.prosseguir {
+  width: 369px;
+  height: 54px;
+  background: #ec362d;
+  border-radius: 15px;
+  border: none;
+  color: #fff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
 .hidden{
   display: none;
 }
-
 
   
 /**  Responsiviness **/
@@ -371,8 +500,5 @@
     display: none;
   }
 
-  /** Tela 2   **/
-
- 
-
 }
+ 

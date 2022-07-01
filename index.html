@@ -22,13 +22,15 @@
   <div class="topo">
     <div>BuzzQuizz</div>
   </div>
+
+  <!----------------------- Tela 1 -------------------------->
   
-  <div class="conteudo-tela1 ">
+  <div class="conteudo-tela1 hidden">
 
    <div class="containerVazio ">
       <div>
         <div class="semQuizz">Você não criou nenhum quizz ainda :(</div>
-        <div class="criarQuizz">Criar Quizz</div> 
+        <div class="criarQuizz" onclick="criarQuizz()">Criar Quizz</div>
       </div>
 
     </div>  
@@ -105,9 +107,9 @@
 
   </div> 
  
+
   
-
-
+  <!----------------------- Tela 2 -------------------------->
 
   <div class="conteudo-tela2 hidden">
 
@@ -165,6 +167,55 @@
 
   </div> 
 
+
+
+
+  <!----------------------- Tela 3 -------------------------->
+
+
+  <div class="conteudo-tela3 ">
+    <!--Aí seus conteúdos, pode botar aqui dentro mesmo.. Se ficar ruim, me avisa... Aí dps dá pra dar um hidden nas outras e talz-->
+
+
+      <!-- Tela 3.1 -->
+
+      <div class="crearQuizz0 hidden">
+        <p>Comece pelo começo</p>
+
+        <div class="crearTela0">
+          <input type="text" class="tituloDoQuizz" placeholder="Título do seu quizz">
+          <input type="text" class="imagemDoQuizz" placeholder="URL da imagem do seu quizz">
+          <input type="number" class="qtdPerguntas" placeholder="Quantidade de perguntas do quizz">
+          <input type="number" class="qtdNiveis" placeholder="Quantidade de níveis do quizz">
+        </div>
+        <button class="prosseguir" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+
+      </div>
+
+      <!-- Tela 3.2 -->
+      <div class="perguntas hidden">
+        <div class="titulo">Crie suas perguntas</div>
+        <div class="caixa-perguntas">
+        </div>
+        <button class="prosseguir" onclick="renderizarNiveis()">Prosseguir para criar níveis</button>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Tela 3.3 -->
+
+
+
+
+
+
+
+
+  </div>
 
 
 
