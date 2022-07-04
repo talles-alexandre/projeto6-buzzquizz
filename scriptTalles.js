@@ -221,7 +221,6 @@ function salvarQuizz() {
     dados
   );
   promise.then(salvarNoLocalStorage);
-  promise.catch(alert("Quizz não enviado"));
 }
 function salvarNoLocalStorage(resposta) {
   const quizz = resposta.data;
@@ -242,15 +241,19 @@ function renderizarQuizzSucesso(id) {
   quizzSucesso.innerHTML = `
   
   <div class="titulo">Seu quizz está pronto!</div>
-  <div class="quizz" onclick="clickToPlay(${id})">
+  <div class="quizz" onclick="renderizarQuizzesusuario(${id})">
     <img src="${quizzCriado.image}">
     <div class="overlay"></div>
     <div class="titulo-quizz">${quizzCriado.title}</div>
   </div>
 
-  <button class="acessar-quizz" onclick="clickToPlay(${id})">Acessar Quizz</button>
+  <button class="acessar-quizz" onclick="renderizarQuizzesusuario(${id})">Acessar Quizz</button>
   <button class="voltar" onclick="home()">Voltar pra home</button>
   `;
 }
 
-function renderizarQuizzesusuario() {}
+function renderizarQuizzesusuario(id) {
+  const quizzSucesso = document.querySelector(".quizzSucesso");
+  quizzSucesso.classList.add("hidden");
+  clickToPlay(`${id}`);
+}
