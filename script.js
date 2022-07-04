@@ -6,7 +6,7 @@ let questions;
 let totalQuestions;
 let totalHits = 0;
 let count = 0;
-let result;
+let result = 0;
 let showCongrats;
 let finalButtons;
 
@@ -151,7 +151,7 @@ function selectAnswer(element){
   }    
 
   totalQuestions = questions.length;
-  result = Math.round((totalHits/totalQuestions)*100);
+  result = Math.round(0 + ((totalHits/totalQuestions)*100));
 
   if(count === totalQuestions){
     setTimeout(FinishQuizz, 2000, result);
