@@ -220,5 +220,31 @@ function salvarQuizz() {
     "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes",
     dados
   );
-  promise.then(alert("FOi"));
+  promise.then(salvarNoLocalStorage);
 }
+function salvarNoLocalStorage(resposta) {
+  const quizz = resposta.data;
+
+  renderizarQuizzSucesso(quizz.id);
+}
+
+function renderizarQuizzSucesso(id) {
+  const classNiveis = document.querySelector(".niveis");
+  classNiveis.classList.add("hidden");
+  const quizzSucesso = document.querySelector(".quizzSucesso");
+
+  quizzSucesso.innerHTML = `
+  
+  <div class="titulo">Seu quizz está pronto!</div>
+  <div class="quizz" onclick="exibirQuizz(${id})">
+    <img src="${quizzCriado.image}">
+    <div class="overlay"></div>
+    <div class="titulo-quizz">${quizzCriado.title}</div>
+  </div>
+
+  <button class="acessar-quizz" onclick="">Acessar Quizz</button>
+  <button class="voltar">Voltar pra home</button>
+  `;
+}
+
+function renderizarQuizzesusuario() {}
