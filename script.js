@@ -1,6 +1,14 @@
 /* Tela 1 */
 
 listAllQuizzes()
+let questionsInfo;
+let questions;
+let totalQuestions;
+let totalHits = 0;
+let count = 0;
+let result;
+let showCongrats;
+let finalButtons;
 
 function listAllQuizzes(){
 
@@ -11,8 +19,10 @@ function listAllQuizzes(){
 
 }
 
+
+
 function firstPageQuizzList(info){
-    let quizzList = info.data
+    let quizzList = info.data;
     let fileiraQuizz = document.querySelector(".todosQuizzes .fileiraQuizz");
 
     console.log(quizzList[1].id);
@@ -28,10 +38,11 @@ function firstPageQuizzList(info){
 
 }
 
+
 /* Tela 2  */
-clickToPlay();
+
+
 function clickToPlay(element){
-    //Fechar tela1 e abrir tela 2 no quizz que a pessoa clicou.
     let id;
     if(element !== undefined){
         id = `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${element}`
@@ -43,6 +54,14 @@ function clickToPlay(element){
 
 }
 
+
+
+function comparador() {
+  return Math.random() - 0.5;
+}
+
+
+
 function displayUniqueQuizz(uniqueQuizz){
 
     const tela1 = document.querySelector(".conteudo-tela1");
@@ -50,37 +69,172 @@ function displayUniqueQuizz(uniqueQuizz){
 
     tela1.classList.add("hidden");
     tela2.classList.remove("hidden");
+    
+    let scrollToTop = document.querySelector(".topo");
+    scrollToTop.scrollIntoView();
 
-    let questionsInfo = uniqueQuizz.data;
-    let questions = uniqueQuizz.data.questions;
+    questionsInfo = uniqueQuizz.data;
+    questions = uniqueQuizz.data.questions;
+    console.log(questions);
+
     let quizzUnicoContainer = document.querySelector(".conteudo-tela2");
+
     quizzUnicoContainer.innerHTML += `<div class="banner">
         <img src="${questionsInfo.image}">
         <div>${questionsInfo.title}</div>
       </div>`
     
 
-    console.log(questionsInfo);
-    console.log(questions);
-    console.log(questions.length);
-    console.log(quizzUnicoContainer);
-
-
-
     for(let i= 0; i < questions.length; i++){
-        quizzUnicoContainer.innerHTML += `<div class="quizzContainer">
-        <div class="quizzPergunta" style="background-color: ${questions[i].color};">
-          <div>${questions[i].title}</div>
-        </div>
-        <div class="quizzOpcoes">
-          <div class="opcao" onclick=""><img src="img/Rectangle38.png"/><div>The boy who lived</div></div>
-          <div class="opcao" onclick=""><img src="img/Rectangle39.png"/><div>O livro monstruoso dos monstros</div></div>
-          <div class="opcao" onclick=""><img src="img/Rectangle40.png"/><div>Anel velho</div></div>
-          <div class="opcao" onclick=""><img src="img/Rectangle41.png"/><div>Diadema da RavenClaw</div></div>
-        </div>
-      </div>`
+
+      quizzUnicoContainer.innerHTML += `
+        <div class="quizzContainer">
+          <div class="quizzPergunta" style="background-color: ${questions[i].color};">
+            <div>${questions[i].title}</div>
+          </div>
+          <div class="quizzOpcoes">
+          </div>
+        </div>`
+
+         let quizzOpcoes = document.querySelectorAll(".quizzOpcoes");
+
+         
+         let sortAnswers = questions[i].answers;  
+         sortAnswers.sort(comparador);
+
+         for(let j = 0; j < sortAnswers.length; j++){
+          let lastQuizzOpcoes = quizzOpcoes[quizzOpcoes.length-1];
+            lastQuizzOpcoes.innerHTML += `
+              <div class="opcao" onclick="selectAnswer(this)"><img src="${sortAnswers[j].image}"/><div class = "option-texto">${sortAnswers[j].text}</div><div class="tof hidden">${sortAnswers[j].isCorrectAnswer}</div></div>
+            `
+         }
+
+    }    
+
+}
 
 
+
+function selectAnswer(element){
+
+  const trueOrFalse = element.querySelector(".tof");  
+
+  count++
+  
+  let elementFather= element.parentNode;
+  let answersList = elementFather.querySelectorAll(".opcao");
+  let randomTof = elementFather.querySelectorAll(".opcao .tof");
+
+
+  if(trueOrFalse.innerHTML === "true"){
+    totalHits++
+  }
+
+ 
+  for(let i=0; i < answersList.length;i++){
+    if(randomTof[i].innerHTML === "true"){
+      answersList[i].style.color = "#009C22";
+    }
+    else{
+      answersList[i].style.color = "#FF4B4B";
+    }
+    
+    if(trueOrFalse.innerHTML === "true"){
+      answersList[i].classList.add("layer");
+      element.classList.remove("layer");
+    }else{
+      answersList[i].classList.add("layer");
+      element.classList.remove("layer");
     }
 
+    setTimeout(scrollAfterTwoSeconds, 2000, answersList[i]);
+  }    
+
+  totalQuestions = questions.length;
+  result = Math.round((totalHits/totalQuestions)*100);
+
+  if(count === totalQuestions){
+    setTimeout(FinishQuizz, 2000, result);
+  }
+
+}
+
+
+
+function scrollAfterTwoSeconds(answersList){
+  answersList.scrollIntoView();
+}
+
+
+
+function FinishQuizz(result){
+let lastPart = document.querySelector(".conteudo-tela2");
+let finalLevel;
+let finalTitle;
+let finalText;
+let finalImage;
+let levels = questionsInfo.levels;
+
+for(let i = 0; i < levels.length; i++){
+  if(result >= levels[i].minValue &&  result <= levels[levels.length-1].minValue){
+    finalTitle = levels[i].title;
+    finalImage = levels[i].image;
+    finalText = levels[i].text;
+    finalLevel = levels[i].minValue;
+  }
+
+}
+
+lastPart.innerHTML += ` 
+<div class="parabensContainer hidden">
+  <div class="parabensMensagem">
+    <div>${result}% de acerto: ${finalTitle}</div>
+  </div>
+  <div class="ladoParabens">
+      <div class="parabensImagem">
+        <img src="${finalImage}"/>
+      </div>
+      <div class="parabens-texto">
+      ${finalText}
+      </div>
+  </div> 
+</div>
+<div class="final hidden">
+<div class="reiniciarQuizz" onclick="restart()">Reiniciar Quizz</div>
+<div class="voltarHome" onclick="home()">Voltar para home</div>
+</div> 
+`
+
+showCongrats = document.querySelector(".parabensContainer");
+finalButtons = document.querySelector(".final")
+showCongrats.classList.remove("hidden");
+finalButtons.classList.remove("hidden");
+showCongrats.scrollIntoView();
+
+}
+
+
+
+function restart(){
+
+  let scrollToTheTop = document.querySelector(".banner");
+  scrollToTheTop.scrollIntoView();
+ 
+  initialState = document.querySelectorAll(".opcao");
+
+  for(let i = 0; i < initialState.length; i++){
+    initialState[i].style.color = "#000000";
+    initialState[i].classList.remove("layer");
+  }
+  showCongrats.classList.add("hidden");
+  finalButtons.classList.add("hidden");
+  totalHits = 0;
+  count = 0;
+  result = "";
+
+}
+
+
+function home(){
+  location.reload();
 }

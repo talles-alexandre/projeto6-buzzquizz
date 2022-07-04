@@ -25,9 +25,9 @@
 
   <!----------------------- Tela 1 -------------------------->
   
-  <div class="conteudo-tela1 hidden">
+  <div class="conteudo-tela1 ">
 
-   <div class="containerVazio ">
+   <div class="containerVazio hidden">
       <div>
         <div class="semQuizz">Você não criou nenhum quizz ainda :(</div>
         <div class="criarQuizz" onclick="criarQuizz()">Criar Quizz</div>
@@ -35,16 +35,16 @@
 
     </div>  
 
-    <div class="displayQuizzesUsuario hidden">
+    <div class="displayQuizzesUsuario ">
       <div class="quizzesUsuario">
        
-        <div class="titulo"> 
-          <div>Seus Quizzes </div>
+        <div class="titulo titleFromUser"> 
+          <div><nobr>Seus Quizzes</nobr></div>
           <div><ion-icon name="add-outline"></ion-icon></div> 
         
         </div> 
 
-        <div class="fileiraQuizz">
+        <div class="fileiraQuizz fromUser">
 
           <div class="caixaDoQuizz">
             <img src="img/Simpsons.jpg"/>
@@ -60,50 +60,17 @@
       </div> 
     </div>
 
-    <div class="todosQuizzes">
-
+    <div class="displayTodosQuizzes">
       <div class="titulo">
-        <div>Todos os Quizzes</div>
-      </div>
-
-      <div class="fileiraQuizz">
-
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2012/02/Os-Simpsons.jpeg?quality=100&strip=info&w=680&h=453&crop=1"/> 
-          <div class="texto-da-imagem">Acerte os personagens corretos dos Simpsons e prove seu amor!</div>
+          <div><nobr>Todos os Quizzes</nobr></div>
         </div>
+      <div class="todosQuizzes">
 
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="img/sloth.jpg"/>
-          <div class="texto-da-imagem">O quanto você é de boas?</div>
-        </div>
-
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="img/Simpsons.jpg"/>
-          <div class="texto-da-imagem">Acerte os personagens corretos dos Simpsons e prove seu amor!</div>
-        </div>
-
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="img/Simpsons.jpg"/>
-          <div class="texto-da-imagem">Acerte os personagens corretos dos Simpsons e prove seu amor!</div>
-        </div>
-
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="img/sloth.jpg"/>
-          <div class="texto-da-imagem">O quanto você é de boas?</div>
-        </div>
-
-        <div class="caixaDoQuizz" onclick="clickToPlay()">
-          <img src="img/Simpsons.jpg"/>
-          <div class="texto-da-imagem">Acerte os personagens corretos dos Simpsons e prove seu amor!</div>
-        </div>
+        <div class="fileiraQuizz">
+        </div> 
 
       </div> 
-
-
-
-    </div> 
-
+    </div>
 
   </div> 
  
@@ -112,59 +79,6 @@
   <!----------------------- Tela 2 -------------------------->
 
   <div class="conteudo-tela2 hidden">
-
-    
-    <div class="banner">
-      <img src="img/harrypottercastle.jpg">
-      <div>O quão Potterhead é você?</div>
-    </div>
-    
-    <div class="quizzContainer">
-      <div class="quizzPergunta" style="background-color: #434CA0;">
-        <div>Qual dos objetos abaixo NÃO é uma horcrux?</div>
-      </div>
-      <div class="quizzOpcoes">
-        <div class="opcao" onclick=""><img src="img/Rectangle38.png"/><div>The boy who lived</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle39.png"/><div>O livro monstruoso dos monstros</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle40.png"/><div>Anel velho</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle41.png"/><div>Diadema da RavenClaw</div></div>
-      </div>
-    </div>
-
-    <div class="quizzContainer">
-      <div class="quizzPergunta">
-        <div>Qual dos objetos abaixo NÃO é uma horcrux?</div>
-      </div>
-      <div class="quizzOpcoes">
-        <div class="opcao" onclick=""><img src="img/Rectangle38.png"/><div>The boy who lived</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle39.png"/><div>O livro monstruoso dos monstros</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle40.png"/><div>Anel velho</div></div>
-        <div class="opcao" onclick=""><img src="img/Rectangle41.png"/><div>Diadema da RavenClaw</div></div>
-      </div>
-    </div>
-  
-
-
-    <div class="parabensContainer hidden">
-      <div class="parabensMensagem">
-        <div>88% de acerto: Você é praticamente um aluno de Hogwarts!</div>
-      </div>
-      <div class="ladoParabens">
-          <div class="parabensImagem">
-            <img src="img/image.png"/>
-          </div>
-          <div class="parabens-texto">
-            Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.
-          </div>
-      </div> 
-    </div>
-
-    <div class="final hidden">
-      <div class="reiniciarQuizz">Reiniciar Quizz</div>
-      <div class="voltarHome">Voltar para home</div>
-    </div> 
-
-
   </div> 
 
 
