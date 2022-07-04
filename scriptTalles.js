@@ -90,7 +90,7 @@ function obterPerguntas() {
     pergunta.answers = [];
     const respostaCorreta = {
       text: document.querySelector(`.pergunta-${i}-resposta-correta`).value,
-      img: document.querySelector(`.pergunta-${i}-url-correta`).value,
+      image: document.querySelector(`.pergunta-${i}-url-correta`).value,
       isCorrectAnswer: true,
     };
     pergunta.answers.push(respostaCorreta);
@@ -111,8 +111,6 @@ function obterPerguntas() {
     }
     quizzCriado.questions.push(pergunta);
   }
-
-  console.log(quizzCriado);
 }
 function renderizarNiveis() {
   const valido = validarPerguntas();
@@ -217,10 +215,10 @@ function salvarQuizz() {
     questions: quizzCriado.questions,
     levels: quizzCriado.levels,
   };
-
+  console.log(dados);
   const promise = axios.post(
     "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes",
     dados
   );
-  promise.then(console.log(dados));
+  promise.then(alert("FOi"));
 }
