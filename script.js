@@ -1,6 +1,7 @@
 /* Tela 1 */
-
-listAllQuizzes()
+let userid =[];
+listAllQuizzes();
+VerifyUserQuizz();
 let questionsInfo;
 let questions;
 let totalQuestions;
@@ -23,11 +24,8 @@ function listAllQuizzes(){
 
 function firstPageQuizzList(info){
     let quizzList = info.data;
+  
     let fileiraQuizz = document.querySelector(".todosQuizzes .fileiraQuizz");
-
-    console.log(quizzList[1].id);
-    console.log(fileiraQuizz)
-    console.log(quizzList);
 
     for(let i = 0; i <quizzList.length; i++){
         fileiraQuizz.innerHTML += `<div class="caixaDoQuizz" onclick="clickToPlay(${quizzList[i].id})">
@@ -39,6 +37,71 @@ function firstPageQuizzList(info){
 }
 
 
+
+
+function VerifyUserQuizz(){
+
+  let dados = localStorage.getItem("quizzes");
+  let convertedData = [JSON.parse(dados)];
+
+  for(let i = 0; i<convertedData.length; i++){
+    
+    userid.push(convertedData[i].id);
+   
+  }
+
+  const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
+  promise.then(displayUserQuizz);
+  console.log(promise);
+  
+}
+
+
+
+
+function displayUserQuizz(userQuizz){
+  let showUserQuizz = document.querySelector(".fromUser");
+  console.log(showUserQuizz)
+  let userQuizzData = userQuizz.data;
+
+  console.log(userid);
+  
+
+  let containerVazio = document.querySelector(".containerVazio");
+  let displayQuizzesUsuario = document.querySelector(".displayQuizzesUsuario");
+
+  
+  containerVazio.classList.add("hidden");
+  displayQuizzesUsuario.classList.remove("hidden");
+  
+  for(let i = 0; i < userQuizzData.length; i++){ 
+    for(let j=0; j< userid.length; j++){
+      if(userQuizzData[i].id === userid[j]){
+        showUserQuizz.innerHTML += `
+        <div class="caixaDoQuizz" onclick="clickToPlay(${userQuizzData[i].id})">
+          <img src="${userQuizzData[i].image}" />
+          <div class="texto-da-imagem">${userQuizzData[i].title}</div>
+        </div>`
+      }
+      
+    }
+  } 
+
+}
+
+
+
+
+function displayEmptyBox(){
+  let containerVazio = document.querySelector(".containerVazio");
+  let displayQuizzesUsuario = document.querySelector(".displayQuizzesUsuario");
+
+  
+  containerVazio.classList.remove("hidden");
+  displayQuizzesUsuario.classList.add("hidden");
+}
+
+
 /* Tela 2  */
 
 
@@ -46,10 +109,8 @@ function clickToPlay(element){
     let id;
     if(element !== undefined){
         id = `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${element}`
-        console.log(id);
         const promise = axios.get(id);
         promise.then(displayUniqueQuizz);
-        console.log(promise)
     } 
 
 }
@@ -64,6 +125,7 @@ function comparador() {
 
 function displayUniqueQuizz(uniqueQuizz){
 
+
     const tela1 = document.querySelector(".conteudo-tela1");
     const tela2 = document.querySelector(".conteudo-tela2");
 
@@ -75,7 +137,6 @@ function displayUniqueQuizz(uniqueQuizz){
 
     questionsInfo = uniqueQuizz.data;
     questions = uniqueQuizz.data.questions;
-    console.log(questions);
 
     let quizzUnicoContainer = document.querySelector(".conteudo-tela2");
 
@@ -112,6 +173,8 @@ function displayUniqueQuizz(uniqueQuizz){
     }    
 
 }
+
+
 
 
 
@@ -161,9 +224,12 @@ function selectAnswer(element){
 
 
 
+
+
 function scrollAfterTwoSeconds(answersList){
   answersList.scrollIntoView();
 }
+
 
 
 
@@ -233,6 +299,7 @@ function restart(){
   result = "";
 
 }
+
 
 
 function home(){

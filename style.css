@@ -824,9 +824,10 @@ ion-icon {
     max-width: 100%;
   }
 
-  .hidden {
-    display: none;
+  .quizzesUsuario{
+    padding-left: 50px;
   }
+
 }
 
 @media (max-width: 751px) {
@@ -834,9 +835,7 @@ ion-icon {
     width: 250px;
     height: 150px;
   }
-  .hidden {
-    display: none;
-  }
+
 }
 
 @media (max-width: 591px) {
@@ -844,9 +843,7 @@ ion-icon {
     width: 180px;
     height: 130px;
   }
-  .hidden {
-    display: none;
-  }
+ 
 }
 
 @media (max-width: 451px) {
@@ -854,16 +851,12 @@ ion-icon {
     width: 120px;
     height: 80px;
   }
-  .hidden {
-    display: none;
-  }
+ 
 }
 
 @media (max-width: 417px) {
   .option-texto {
     font-size: 10px;
   }
-  .hidden {
-    display: none;
-  }
+ 
 }
