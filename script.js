@@ -1,7 +1,5 @@
 /* Tela 1 */
 let userid = [];
-listAllQuizzes();
-VerifyUserQuizz();
 let questionsInfo;
 let questions;
 let totalQuestions;
@@ -10,6 +8,9 @@ let count = 0;
 let result = 0;
 let showCongrats;
 let finalButtons;
+
+listAllQuizzes();
+VerifyUserQuizz();
 
 function listAllQuizzes() {
   const promise = axios.get(
